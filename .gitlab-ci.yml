@@ -1,0 +1,13 @@
+include:
+  - project: "dataprovider/infrastructure/ci-cd"
+    file:
+      - "template/python/test.yml"
+
+stages:
+  - unit-test
+  - release
+
+unit-test-uv:
+  extends: .unit-test-uv
+  variables:
+    PYTHON_VERSION: 3.13
